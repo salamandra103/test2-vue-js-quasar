@@ -3,7 +3,11 @@
     <Sidebar />
     <main class="main__container">
       <Header />
-      <slot></slot>
+      <div class="row justify-center q-pt-md q-pb-md">
+        <div class="col-10">
+          <slot></slot>
+        </div>
+      </div>
     </main>
   </div>
 </template>
@@ -11,8 +15,8 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import Header from "@/components/Header.vue";
-import Sidebar from "@/components/Sidebar.vue";
+import Header from "@/containers/Header/Header.vue";
+import Sidebar from "@/containers/Sidebar/Sidebar.vue";
 
 export default defineComponent({
   name: "Main",
@@ -33,5 +37,13 @@ export default defineComponent({
     display: grid;
     grid-template-rows: 52px 1fr;
   }
+}
+
+.container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 136px;
+  background-color: black;
+  margin: 0 auto;
 }
 </style>

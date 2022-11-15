@@ -22,19 +22,15 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 
-import Typography from "@/components/Typography.vue";
-
 export default defineComponent({
   name: "Sidebar",
-  components: {
-    Typography,
-  },
   data() {
     return {
       isVisible: true,
       menu: [
         {
           label: "Home",
+          link: "/",
           iconName: "home",
         },
         {
@@ -52,6 +48,7 @@ export default defineComponent({
         },
         {
           label: "Contacts",
+          link: "/contacts",
           iconName: "contacts",
         },
         {

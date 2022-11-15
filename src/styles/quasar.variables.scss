@@ -25,4 +25,26 @@ $black: #000;
 
 $affirmation: #69BC35;
 
+$emphasize: #202223;
+$distinct: #6E7191;
+$neutral :#4E4B66;
+$action: #008CFF;
+
+.text-emphasize {
+    color: $emphasize !important;
+}
+
+.text-distinct {
+    color: $distinct !important;
+}
+
+.text-neutral {
+    color: $neutral !important;
+}
+
+.text-action {
+    color: $action !important;
+}
+
+
 @import '~quasar-variables-styl'

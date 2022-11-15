@@ -5,4 +5,10 @@ import { Quasar } from "quasar";
 
 import "@/styles/index.scss";
 
-createApp(App).use(Quasar, quasarUserOptions).mount("#app");
+import Typography from "@/components/Typography.vue";
+
+const app = createApp(App);
+
+app.component("Typography", Typography);
+
+app.use(Quasar, quasarUserOptions).mount("#app");
