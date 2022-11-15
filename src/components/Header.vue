@@ -56,10 +56,27 @@
           </ul>
         </div>
       </div>
-      <div class="calendar"></div>
-      <div class="notification"></div>
-      <div class="settings"></div>
-      <div class="profile"></div>
+      <div class="header__tools">
+        <ul>
+          <li>
+            <button type="button" class="calendar">
+              <q-icon :name="'calendar_month'" />
+            </button>
+          </li>
+          <li>
+            <button type="button" class="notification">
+              <q-icon :name="'notification_important'" />
+            </button>
+          </li>
+          <li>
+            <button type="button" class="settings">
+              <q-icon :name="'settings'" />
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <!-- <div class="profile"></div> -->
     </div>
   </header>
 </template>
@@ -195,10 +212,6 @@ export default defineComponent({
       &:hover:not(.active) {
         background-color: #e5e5e5;
       }
-
-      &:active+.header-status__container {
-        transform: scale(1) !important;
-      }
     }
 
     &__container {
@@ -210,11 +223,11 @@ export default defineComponent({
       top: 100%;
       max-width: 245px;
       width: 245px;
-      transform: scale(0);
-      transition: transform 0.5s;
+      transition: transform 0.5s, opacity 0.3s;
+      opacity: 0;
 
       &.active {
-        transform: scale(1);
+        opacity: 1;
       }
     }
 
@@ -282,10 +295,47 @@ export default defineComponent({
     }
   }
 
+  &__tools {
+    display: flex;
+    flex-flow: row wrap;
+
+    ul {
+      display: flex;
+      flex-flow: row wrap;
+      padding: 0 6px;
+
+      li {
+        margin: 0 13px;
+
+        button {
+          background-color: transparent;
+          transition: transform .2s;
+
+          i {
+            font-size: 1.5em;
+            color: $distinct;
+          }
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+
+
+  }
+
   &__left {
     display: flex;
     align-content: center;
     flex: 1 0 auto;
+  }
+
+  &__right {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
   }
 
   &__search {
