@@ -66,8 +66,8 @@ const tagName: { [key in keyof typeof FontTypeEnum]: keyof typeof TagTypeEnum } 
   "14 Body Text Regular": "span",
   "12 Body Text Semibold": "span",
   "12 Body Text Regular": "span",
-  "12 Caption": "p",
-  "10 Caption CAPS": "p",
+  "12 Caption": "span",
+  "10 Caption CAPS": "span",
   "10 Text Small": "span",
 
   "Button Large": "span",
@@ -189,13 +189,14 @@ span[class*="link-"] {
 .caption-12 {
   font-size: 12px;
   line-height: 16px;
-  font-weight: 600;
+  font-weight: 700;
   // color: $distinct;
 }
 
 .caption-caps-10 {
   font-size: 10px;
   line-height: 12px;
+  font-weight: 700;
   text-transform: uppercase;
   // color: $distinct;
 }
